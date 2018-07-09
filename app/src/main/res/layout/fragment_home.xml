@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <import type="android.widget.BaseAdapter"/>
+
+        <variable
+            name="homeLock"
+            type="com.lhkj.cgj.lock.HomeLock"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--<com.lhkj.cgj.spirit.swipy.SwipyRefreshLayout-->
+        <!--android:id="@+id/srl_refresh"-->
+        <!--custom:srl_direction="top"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <com.lhkj.cgj.spirit.MyScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical"
+            android:scrollbars="none">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bak">
+
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/home_ims"
+                    android:layout_width="0dp"
+                    android:layout_height="144dp"
+                    app:canLoop="true"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/home_ims">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="今日油价"
+                        android:textColor="@color/text_gray"/>
+
+                    <com.lhkj.cgj.ui.other.vertical_view.MarqueeView
+                        android:id="@+id/marqueeView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        app:mvAnimDuration="1000"
+                        app:mvDirection="bottom_to_top"
+                        app:mvInterval="2000"
+                        app:mvSingleLine="true"
+                        app:mvTextColor="@color/text_gray"
+                        app:mvTextSize="14sp"
+                        />
+
+                </LinearLayout>
+
+                <com.lhkj.cgj.spirit.GridViewForScrollView
+                    android:id="@+id/home_gv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/white"
+                    android:numColumns="4"
+                    android:scrollbars="none"
+                    app:adapter="@{homeLock.homeAdapter}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout24"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/home_gv">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:src="@drawable/zixun"
+                        />
+
+                    <com.lhkj.cgj.ui.other.vertical_view.MarqueeView
+                        android:id="@+id/marqueeViewtwo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:mvAnimDuration="1000"
+                        app:mvDirection="bottom_to_top"
+                        app:mvInterval="2000"
+                        app:mvSingleLine="true"
+                        app:mvTextColor="@color/text_gray"
+                        app:mvTextSize="14sp"
+                        />
+
+
+                </LinearLayout>
+                <!--修改了样式 如下油价不使用-->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/con_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout25">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@mipmap/icon_many"/>
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@mipmap/youjia"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/home_oil_list"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:paddingBottom="15dp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView4"/>
+
+
+                </android.support.constraint.ConstraintLayout>
+
+                <com.lhkj.cgj.spirit.ListViewForScrollView
+                    android:id="@+id/home_news"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:scrollbars="none"
+                    app:adapter="@{homeLock.homeNewsAdapter}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/con_price"/>
+
+            </android.support.constraint.ConstraintLayout>
+        </com.lhkj.cgj.spirit.MyScrollView>
+        <!--</com.lhkj.cgj.spirit.swipy.SwipyRefreshLayout>-->
+    </LinearLayout>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="apl">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="pop_balck">#323232</color>
+    <color name="main_color">#F84764</color>
+    <color name="bak">#F4F4F4</color>
+    <color name="line">#DBDBDB</color>
+    <color name="gray">#969696</color>
+    <color name="text_gray">#8A000000</color>
+    <color name="gray_hint">#BABABA</color>
+    <color name="mask">#50000000</color>
+    <color name="gray_text">#646464</color>
+    <color name="whitebak">#FDFDFD</color>
+    <color name="yel">#FDD768</color>
+    <color name="shallowyel">#FDDE70</color>
+    <color name="deepyel">#F49109</color>
+    <color name="divider_color">#DBDBDB</color>
+
+</resources>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.lhkj.cgj">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+    <application
+        android:name=".ui.main.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.main.StartPageActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.other.SetActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.other.AboutActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.login.ForgetActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.login.SignActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.shop.ShopDetailsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.station.BindingActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.station.StationInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.PerfectActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.MyOrderActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.MyCardActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.MySpeakActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.ShareActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.LllInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.DoubtActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.other.MyQrCodeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.LllGameActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.MyHisActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.bbs.NewsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.other.ViolationInquiryActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.bbs.NewsDetailsActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.SignCalendarActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mine.ShareUserActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".wxapi.WXPayActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".spirit.SelectPic.SelectPicPopupWindow"
+            android:screenOrientation="portrait"
+            android:theme="@style/selectpicpopupstyles"/>
+        <activity
+            android:name=".ui.mine.SignPriceHisActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.shop.ShopExchangeActivity"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="pWySreMuLVYwkvv9pIctwtSE4jcblsxm"/>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v4.3.1">
+                </action>
+            </intent-filter>
+        </service>
+        <!-- ShareSDK的activity -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent100371282"/>
+
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="1eedd7646a39e"/>
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="a3bb96fa9baa491b6a927c13849f89b9"/>
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+            android:name="net.sourceforge.simcpux.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <!-- User defined.  For test only  用户自定义的广播接收器 -->
+        <receiver
+            android:name=".push.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION"/> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.lhkj.cgj"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <!-- alipay sdk end -->
+
+        <activity android:name=".ui.login.AgreementActivity">
+        </activity>
+        <activity android:name=".ui.shop.ShopCatListActivity">
+        </activity>
+        <!-- 友盟所需 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5acc7bd08f4a9d40ca000043"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID"/>
+
+        <activity android:name=".ui.main.ZixunDetailActivity">
+        </activity>
+        <activity android:name=".ui.bbs.ActiveListActivity">
+        </activity>
+        <activity android:name=".ui.bbs.ActiveDetailActivity">
+        </activity>
+    </application>
+
+</manifest>

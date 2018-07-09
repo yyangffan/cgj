@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shopHotItem"
+            type="com.lhkj.cgj.lock.ShopLock.ShopHotItem"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/hot"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:lines="2"
+            android:maxLines="1"
+            android:paddingRight="3dp"
+            android:text="@{shopHotItem.name}"
+            android:textColor="@color/text_gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:text="@{shopHotItem.pay}"
+            android:textColor="@color/main_color"
+            android:textSize="10sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/textView15"
+            app:layout_constraintRight_toRightOf="@+id/textView15"/>
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textView16"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView15"
+            app:srcCompat="@mipmap/pay_hot"/>
+
+        <ImageView
+            android:id="@+id/list_im"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:minHeight="72dp"
+            android:minWidth="72dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView15"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:text="@{shopHotItem.stock}"
+            android:textColor="@color/main_color"
+            android:textSize="10sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/textView16"
+            app:layout_constraintRight_toRightOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="@+id/textView16"/>
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@color/line"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.lhkj.cgj"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 16
+        versionName "1.5"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "d149062065774e53fe29e3de", //JPush上注册的包名对应的appkey.  74a85c5901967a11bd1b5748
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions {
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(path: ':libzxing')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/baidumapapi_base_v4_3_1.jar')
+    compile files('libs/alipaySdk-20170710.jar')
+
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3-alpha-2'
+    compile 'pub.devrel:easypermissions:1.0.1'
+    compile 'cn.jiguang.sdk:jpush:3.0.7'
+    compile 'cn.jiguang.sdk:jcore:1.1.5'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'org.jsoup:jsoup:1.10.3'
+    compile 'com.umeng.sdk:common:latest.integration'
+    compile 'com.umeng.sdk:analytics:latest.integration'
+    compile 'com.yanzhenjie.nohttp:nohttp:1.1.9'
+    testCompile 'junit:junit:4.12'
+}
